@@ -1,0 +1,29 @@
+# Do not touch! This could break the script!
+options:
+	sklauncher_verison: 0.1.1
+	release: alpha
+	developers: Norivane, HerrFuchs
+
+on skript start:
+	fetch url "https://raw.githubusercontent.com/SkriptLibrary/SkLibrary/refs/heads/main/versions/latest.txt"
+	if fetched url content is not "{@sklauncher_verison}":
+		send "&7[SKLIBRARY] &fThere is a &anew&f version of SkLibrary!" to console
+	if file path "plugins/SkBee" is a dir:
+		send "&7[SKLIBRARY] &aSkBee is installed." to console
+	else:
+		send "&7[SKLIBRARY] &cSkBee is not installed! This is a dependencie." to console
+
+command /sklibrary [<text>] [<text>] [<text>]:
+	permission: sklibrary.command.use
+	trigger:
+		set {_m} to mini message from "<gradient:#5c27c9:#c84b90:#dfaa4a><b>SkLibrary</b><gradient>"
+		if arg-1 is "modules":
+			if arg-2 is "install":
+				send "%{_m}% &7»&r &cZurzeit gibt es keine Skripts :(" to player
+			if arg-2 is "remove":
+				send "%{_m}% &7»&r &cZurzeit gibt es keine Skripts, also kannst du auch keine Installiert haben :)" to player
+		if arg-1 is "info":
+			send "%{_m}% &7»&r &6Version: &f%"{@sklauncher_verison}"%" to player
+			send "%{_m}% &7»&r &6Developers: &f%"{@developers}"%" to player
+			send "%{_m}% &7»&r &6Release-Tag: &f%"{@release}"%" to player
+			send "%{_m}% &7»&r &cPlease note this is a beta!" to player
