@@ -3,11 +3,12 @@
 # @name Fly
 # @version 0.0.1
 # 
-# @Standalone
+# @skriptDependency config 0.0.1
 # 
 ###
 
 command /fly [<player=%player%>] [<boolean=%yes if arg-1's fly mode = no else no%>]:
   permission: command.fly
   trigger:
+    send getConfig()
     set arg-1's fly mode to arg-2 ? no

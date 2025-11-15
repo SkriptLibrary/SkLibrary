@@ -1,0 +1,11 @@
+###
+# 
+# @name Config
+# @version 0.0.1
+# 
+# @library
+# 
+###
+
+function getConfig()::text:
+  return "config"
