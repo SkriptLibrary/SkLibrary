@@ -1,0 +1,4 @@
+command /fly [<player=%player%>] [<boolean=%yes if arg-1's fly mode = no else no%>]:
+  permission: command.fly
+  trigger:
+    set arg-1's fly mode to arg-2 ? no
