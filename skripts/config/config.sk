@@ -7,5 +7,21 @@
 # 
 ###
 
-function getConfig()::text:
-  return "config"
+on load:
+  set {config::prefix} to "<##54DAF4>P<##54C1E8>r<##54A8DB>e<##5490CF>f<##5477C2>i<##545EB6>x"
+  set {config::colors::text} to "<##faf3dd>"
+  set {config::colors::error} to "<##DA1C1B>"
+  set {config::colors::success} to "<##57F287>"
+  set {config::colors::warning} to "<##F77F00>" 
+  set {config::colors::accent} to "<##65AFFF>"
+  set {config::messages::nopermission} to "%{config::prefix}%%{config::colors::error}%You don't have the required permissions!"
+  
+
+  
+command /testColors:
+  trigger:
+    send {config::colors::text} + "text"
+    send {config::colors::error} + "error"
+    send {config::colors::success} + "success"
+    send {config::colors::warning} + "warning"
+    send {config::colors::accent} + "accent"
