@@ -1,6 +1,6 @@
 ###
 # 
-# @name skAdmin
+# @name Vanish
 # @version 0.0.1
 # 
 # @skriptDependency config 0.0.1
@@ -10,7 +10,7 @@
 ###
 
 command /vanish [<player=%player%>]:
-	permission: sklibrary.admin.vanish
+	permission: sklibrary.vanish
 	permission message: {config::messages::nopermission}
 	trigger:
 		if {vanish::%arg-1%} is true:
