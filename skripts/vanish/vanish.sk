@@ -1,0 +1,39 @@
+###
+# 
+# @name skAdmin
+# @version 0.0.1
+# 
+# @skriptDependency config 0.0.1
+# @skriptDependency text 0.0.1
+# @addonDependency skript-placeholders 1.7.0 
+# 
+###
+
+command /vanish [<player=%player%>]:
+	permission: sklibrary.admin.vanish
+	permission message: {config::messages::nopermission}
+	trigger:
+		if {vanish::%arg-1%} is true:
+			send msg(accent(arg-1) + " is now " + error("unvanished.")) to player if player is not arg-1
+			send msg(accent("You") + " are now " + error("unvanished.")) to arg-1
+			reveal arg-1 to all players
+			clear {vanish::%arg-1%}
+
+		else:
+			send msg(accent(arg-1) + " is now in " + success("vanish.")) to player if player is not arg-1
+			send msg(accent("You") + " are now in " + success("vanish.")) to arg-1
+			hide arg-1 from all players
+			set {vanish::%arg-1%} to true
+
+on join:
+	if {vanish::%player%} is true:
+		hide the player from all players
+	if {vanish::%player%} is not set:
+		reveal the player from all players
+
+
+papi placeholder with the prefix "skadmin":
+	if the identifier is "all_vanished_players":
+		set the result to size of hidden players of player
+	if the identifier is "all_players":
+		set the result to (size of all players) - (size of hidden players of player)
