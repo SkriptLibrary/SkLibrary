@@ -1,0 +1,16 @@
+###
+# 
+# @name Invsee
+# @version 0.0.1
+# 
+# @skriptDependency config 0.0.1
+# @skriptDependency text 0.0.1
+# 
+###
+
+command /invsee [<offline player>]:
+	permission: sklibrary.invsee
+	permission message: {config::messages::nopermission}
+	trigger:
+		open arg-1 to player
+		play sound "block.chest.open" with volume 0.5 to the player
