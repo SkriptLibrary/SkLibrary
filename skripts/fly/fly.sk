@@ -4,11 +4,19 @@
 # @version 0.0.1
 # 
 # @skriptDependency config 0.0.1
+# @skriptDependency text 0.0.1
 # 
 ###
 
 command /fly [<player=%player%>] [<boolean=%yes if arg-1's fly mode = no else no%>]:
   permission: command.fly
   trigger:
-    send getConfig()
-    set arg-1's fly mode to arg-2 ? no
+    if arg-1's fly mode is off:
+      set arg-1's fly mode to on
+      send msg("You can fly now!") to arg-1
+      send msg(accent(arg-1) + " can fly now.") to player if player is not arg-1
+    else:
+      set arg-1's fly mode to off
+      send msg("You can no longer fly!") to arg-1
+      send msg(accent(arg-1) + " can no longer fly.") to player if player is not arg-1
+      
