@@ -25,12 +25,6 @@ command /vanish [<player=%player%>]:
 			hide arg-1 from all players
 			set {vanish::%arg-1%} to true
 
-command /invsee [<offline player>]:
-	permission: sklibrary.admin.invsee
-	permission message: {config::messages::nopermission}
-	trigger:
-		open arg-1 to player
-
 on join:
 	if {vanish::%player%} is true:
 		hide the player from all players
