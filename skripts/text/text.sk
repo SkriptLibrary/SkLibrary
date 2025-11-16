@@ -13,3 +13,12 @@ function msg(content: object)::text:
 function accent(content: object)::text:
   return "%{config::colors::accent}%%{_content}%%{config::colors::text}%"
   
+function error(content: object)::text:
+  return "%{config::colors::error}%%{_content}%%{config::colors::text}%"
+  
+function success(content: object)::text:
+  return "%{config::colors::success}%%{_content}%%{config::colors::text}%"
+  
+function warning(content: object)::text:
+  return "%{config::colors::warning}%%{_content}%%{config::colors::text}%"
+  
