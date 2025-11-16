@@ -10,7 +10,7 @@
 ###
 
 command /vanish [<player=%player%>]:
-	permission: sklibrary.skadmin.gamemode
+	permission: sklibrary.admin.vanish
 	permission message: {config::messages::nopermission}
 	trigger:
 		if {vanish::%arg-1%} is true:
@@ -24,6 +24,12 @@ command /vanish [<player=%player%>]:
 			send msg(accent("You") + " are now in " + success("vanish.")) to arg-1
 			hide arg-1 from all players
 			set {vanish::%arg-1%} to true
+
+command /invsee [<offline player>]:
+	permission: sklibrary.admin.invsee
+	permission message: {config::messages::nopermission}
+	trigger:
+		open arg-1 to player
 
 on join:
 	if {vanish::%player%} is true:
