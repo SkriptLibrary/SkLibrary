@@ -1,0 +1,15 @@
+###
+# 
+# @name Text
+# @version 0.0.1
+# 
+# @library
+# 
+###
+
+function msg(content: object)::text:
+  return "%{config::prefix}% %{config::colors::text}%%formatted {_content}%%{config::colors::text}%"
+  
+function accent(content: object)::text:
+  return "%{config::colors::accent}%%{_content}%%{config::colors::text}%"
+  
