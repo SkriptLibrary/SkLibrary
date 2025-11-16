@@ -8,7 +8,7 @@
 ###
 
 on load:
-  set {config::prefix} to "<##54DAF4>P<##54C1E8>r<##54A8DB>e<##5490CF>f<##5477C2>i<##545EB6>x"
+  set {config::prefix} to "<#5C27C9><b>S<#7730BB><b>k<#9239AD><b>L<#AD429E><b>i<#C84B90><b>b<#CE637F><b>r<#D47B6D><b>a<#D9925C><b>r<#DFAA4A><b>y<reset> <gray>»</gray>"
   set {config::colors::text} to "<##faf3dd>"
   set {config::colors::error} to "<##DA1C1B>"
   set {config::colors::success} to "<##57F287>"
